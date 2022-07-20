@@ -1,0 +1,54 @@
+.menu-container {
+    display: flex;
+    flex-wrap: nowrap;
+
+    justify-content: space-between;
+
+    margin: 0;
+    padding: 0;
+
+    background-color: white;
+}
+.avatar-admin, .left-menu {
+    display: flex;
+    justify-content: space-between;
+
+    margin-left: 10px;
+    margin-right: 0px;
+}
+
+.left-menu  {
+    margin-right: 0px;
+    background-color: white;
+}
+.avatar-admin div {
+    height: 60px;
+    font-size: 10px;
+
+    margin-left: 5px;
+    margin-right: 15px;
+}
+.bla {
+    margin: auto;
+
+    margin-left: 0px;
+}
+.avatar-admin div p{
+    margin: auto;
+}
+
+
+.avatar-admin img {
+    margin: auto;
+    height: 30px;
+}
+
+button {
+    background-color: white !important;
+    border: none !important;
+}
+
+button:hover {
+    border: none !important;
+    cursor: pointer;
+}
