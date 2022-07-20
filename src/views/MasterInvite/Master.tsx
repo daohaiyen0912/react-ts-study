@@ -2,10 +2,58 @@ import React from "react";
 
 import { SideBar } from "../../components/CommonMenu/SideBar/SideBar";
 import { Admin } from "../../components/CommonMenu/RightSideMenu/Admin";
+import {Table} from "./Table";
 
 import './master.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+
+export interface data {
+    id: number;
+    name: String;
+    language: String;
+    capital: String;
+};
+const datas:data[] = [
+    {
+        id: 1,
+        name: "Poland",
+        language: "Polish",
+        capital: "Warsaw",
+      },
+      {
+        id: 2,
+        name: "Bulgaria",
+        language: "Bulgarian",
+        capital: "Sofia",
+      },
+      {
+        id: 3,
+        name: "Hungary",
+        language: "Hungarian",
+        capital: "Budapest",
+      },
+      {
+        id: 4,
+        name: "Moldova",
+        language: "Moldovan",
+        capital: "Chișinău",
+      },
+      {
+        id: 5,
+        name: "Austria",
+        language: "German",
+        capital: "Vienna",
+      },
+      {
+        id: 6,
+        name: "Lithuania",
+        language: "Lithuanian",
+        capital: "Vilnius",
+      },
+];
+
+const rowsPerPage: number = 4;
 
 export const Master = () => {
     return (
@@ -52,7 +100,7 @@ export const Master = () => {
                 </div>
             </div>
             <div className="table-content">
-                
+                <Table datas={datas} rowsPerPage={rowsPerPage} />
             </div>
         </React.Fragment>
     );

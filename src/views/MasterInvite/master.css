@@ -96,3 +96,8 @@
 .each-detail-filter label {
     margin: 0px;
 }
+
+/* Table */
+.table {
+    margin-left: 500px;
+}
