@@ -1,8 +1,21 @@
 import React, { PropsWithChildren } from "react";
 import {useState, useEffect} from 'react';
+import { ActionMeta, InputActionMeta, SingleValue } from "react-select";
+import Select, { components, ControlProps } from 'react-select';
 
 import {data} from "./Master";
+// import {selOption, onChangeRowsPerPage} from "../../services/Table";
 
+const options = [
+    { value: '4', label: '4' },
+    { value: '6', label: '6' },
+
+];
+
+export interface option {
+    value: String;
+    label: String;
+};
 
 // Xác định số trang hiển thị dựa trên data và số phần tử được hiện
 const calculateRange = 
@@ -19,7 +32,7 @@ const calculateRange =
 
 //Phân chia dữ liệu
 const sliceData = (data: {}[], page: number, rowsPerPage: number) => {
-    console.log(data.slice((page-1) * rowsPerPage, page * rowsPerPage));
+    // console.log(data.slice((page-1) * rowsPerPage, page * rowsPerPage));
     return data.slice((page-1) * rowsPerPage, page * rowsPerPage);
 }
 
@@ -29,7 +42,7 @@ const useTable = (data: {}[], page: number, rowsPerPage: number) => {
     const [tableRange, setTableRange] = useState(test1);
     const [slice, setSlice] = useState(test2);
 
-    console.log(slice);
+    // console.log(slice);
 
     useEffect(() => {
         const range:number[] = calculateRange(data, rowsPerPage);
@@ -37,31 +50,101 @@ const useTable = (data: {}[], page: number, rowsPerPage: number) => {
 
         const slice = sliceData(data, page, rowsPerPage);
         setSlice([...slice]);
-    }, [data, setTableRange, page, setSlice]);
+    }, [data, setTableRange, page, setSlice, rowsPerPage]);
+
+    console.log(slice);
 
     return {slice, range: tableRange};
 }
 
+
+
 //Phan chia trang
-const TableFooter = ({ range, setPage, page, slice }: { range: number[]; setPage: any; page: number; slice: any[]; }) => {
+const TableFooter = ({ range, setPage, page, slice, setRowsPerPage, datas}: { range: number[]; setPage: any; page: number; slice: any[]; setRowsPerPage: any; datas: {}[]}) => {
+    const [selOption, setSelOption] = useState({
+        value: "4",
+        label: "4"
+    });
+
     useEffect(() => {
         if(slice.length < 1 && page !== 1) {
             setPage(page-1);
         }
-    }, [slice, page, setPage]);
+        switch(selOption.value) {
+            case "6":
+                setRowsPerPage(6);
+                break;
+            case "8":
+                setRowsPerPage(8);
+                break;
+            default:
+                setRowsPerPage(4);
+                break;
+        }
+    }, [slice, page, setPage, selOption]);
+
+    const onChangeRowsPerPage = (option: any) => {
+        // switch(selOption.value) {
+        //     case "6":
+        //         setRowsPerPage(6);
+        //         break;
+        //     case "8":
+        //         setRowsPerPage(8);
+        //         break;
+        //     default:
+        //         setRowsPerPage(4);
+        //         break;
+        // }
+        setSelOption(option);
+        // console.log(option);
+    }
+
     return (
-        <div>
-          {range.map((el, index) => (
-            <button
-              key={index}
-              className={` ${
-                page === el ? 'activeButton' : 'inactiveButton'
-              }`}
-              onClick={() => setPage(el)}
-            >
-              {el}
-            </button>
-          ))}
+        <div className="table-footer">
+            <div className="total">{datas.length} Kết quả</div>
+            <div className="button-page">
+                <button>&laquo;</button>
+                {range.map((el, index) => (
+                    <button
+                    key={index}
+                    className={` ${
+                        page === el ? 'activeButton' : 'inactiveButton'
+                    }`}
+                    onClick={() => setPage(el)}
+                    >
+                    {el}
+                    </button>
+                ))}
+                <button>&raquo;</button>
+                <div className="select-element">
+                    <Select
+                        defaultValue={options[0]}
+                        // components={{ Control: ControlComponent }}
+                        isSearchable
+                        name="rowsPerPage"
+                        options={options}
+                        // getOptionLabel={(option) => option.label}
+                        // getOptionValue={(option) => option.value}
+                        value={selOption}
+                        onChange={(option) => onChangeRowsPerPage(option)} // this returns (option) => option.phaseText) as a string
+                    />
+                    <span>Kết quả</span>
+                </div>
+            </div>
+            {/* <div className="select-element">
+                <Select
+                defaultValue={options[0]}
+                // components={{ Control: ControlComponent }}
+                isSearchable
+                name="rowsPerPage"
+                options={options}
+                // getOptionLabel={(option) => option.label}
+                // getOptionValue={(option) => option.value}
+                value={selOption}
+                onChange={(option) => onChangeRowsPerPage(option)} // this returns (option) => option.phaseText) as a string
+                />
+                <span>Kết quả</span>
+            </div> */}
         </div>
       );
 };
@@ -69,21 +152,21 @@ const TableFooter = ({ range, setPage, page, slice }: { range: number[]; setPage
 //Table 
 export interface TableProps {
     datas: data[];
-    rowsPerPage: number;
+    // rowsPerPage: number;
 }
 
 export const Table = (props: PropsWithChildren<TableProps>) => {
     const { datas } = props;
-    const {rowsPerPage} = props;
+    // const {rowsPerPage} = props;
     // console.log(datas);
 
     const [page, setPage] = useState(1);
-    const { slice, range } = useTable(datas, page, rowsPerPage);
+    const [rowsPerPage, setRowsPerPage] = useState(4);
 
-    console.log(slice);
+    const { slice, range } = useTable(datas, page, rowsPerPage);
     return (
         <>
-            <TableFooter range={range} slice={slice} setPage={setPage} page={page} />
+            <TableFooter datas={datas} range={range} slice={slice} setPage={setPage} page={page} setRowsPerPage={setRowsPerPage}/>
 
             <table className="table">
                 <thead className="tableRowHeader">
@@ -94,16 +177,21 @@ export const Table = (props: PropsWithChildren<TableProps>) => {
                         <th className="tableHeader">Gọi thầu</th>
                         <th className="tableHeader">Phương thức đấu thầu</th>
                         <th className="tableHeader">Thời gian đóng thầu</th>
-                        <th className="tableHeader"></th>
-                        <th className="tableHeader"></th>
+                        <th className="tableHeader">&nbsp;</th>
+                        <th className="tableHeader">&nbsp;</th>
                     </tr>
                 </thead>
                 <tbody>
                     {slice.map((el: any) => (
                         <tr className="tableRowItems" key={el.id}>
+                        <td className="tableCell table-item-id">{el.id}</td>
                         <td className="tableCell">{el.name}</td>
-                        <td className="tableCell">{el.capital}</td>
+                        <td className="tableCell table-mahsmt">{el.capital}</td>
                         <td className="tableCell">{el.language}</td>
+                        <td className="tableCell">st</td>
+                        <td className="tableCell">st</td>
+                        <td className="tableCell">tag</td>
+                        <td className="tableCell">...</td>
                         </tr>
                     ))}
                 </tbody>

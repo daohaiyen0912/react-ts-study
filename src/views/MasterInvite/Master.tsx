@@ -51,9 +51,141 @@ const datas:data[] = [
         language: "Lithuanian",
         capital: "Vilnius",
       },
+      {
+        id: 7,
+        name: "Lithuania",
+        language: "Lithuanian",
+        capital: "Vilnius",
+      },
+      {
+        id: 8,
+        name: "Lithuania",
+        language: "Lithuanian",
+        capital: "Vilnius",
+      },
+      {
+        id: 9,
+        name: "Lithuania",
+        language: "Lithuanian",
+        capital: "Vilnius",
+      },
+      {
+        id: 10,
+        name: "Lithuania",
+        language: "Lithuanian",
+        capital: "Vilnius",
+      },
+      {
+        id: 11,
+        name: "Lithuania",
+        language: "Lithuanian",
+        capital: "Vilnius",
+      },
+      {
+        id: 12,
+        name: "Lithuania",
+        language: "Lithuanian",
+        capital: "Vilnius",
+      },
+      {
+        id: 13,
+        name: "Lithuania",
+        language: "Lithuanian",
+        capital: "Vilnius",
+      },
+      {
+        id: 14,
+        name: "Lithuania",
+        language: "Lithuanian",
+        capital: "Vilnius",
+      },
+      {
+        id: 15,
+        name: "Lithuania",
+        language: "Lithuanian",
+        capital: "Vilnius",
+      },
+      {
+        id: 16,
+        name: "Lithuania",
+        language: "Lithuanian",
+        capital: "Vilnius",
+      },
+      {
+        id: 17,
+        name: "Lithuania",
+        language: "Lithuanian",
+        capital: "Vilnius",
+      },
+      {
+        id: 18,
+        name: "Lithuania",
+        language: "Lithuanian",
+        capital: "Vilnius",
+      },
+      {
+        id: 19,
+        name: "Lithuania",
+        language: "Lithuanian",
+        capital: "Vilnius",
+      },
+      {
+        id: 20,
+        name: "Lithuania",
+        language: "Lithuanian",
+        capital: "Vilnius",
+      },
+      {
+        id: 21,
+        name: "Lithuania",
+        language: "Lithuanian",
+        capital: "Vilnius",
+      },
+      {
+        id: 22,
+        name: "Lithuania",
+        language: "Lithuanian",
+        capital: "Vilnius",
+      },
+      {
+        id: 23,
+        name: "Lithuania",
+        language: "Lithuanian",
+        capital: "Vilnius",
+      },
+      {
+        id: 24,
+        name: "Lithuania",
+        language: "Lithuanian",
+        capital: "Vilnius",
+      },
+      {
+        id: 25,
+        name: "Lithuania",
+        language: "Lithuanian",
+        capital: "Vilnius",
+      },
+      {
+        id: 26,
+        name: "Lithuania",
+        language: "Lithuanian",
+        capital: "Vilnius",
+      },
+      {
+        id: 27,
+        name: "Lithuania",
+        language: "Lithuanian",
+        capital: "Vilnius",
+      },
+      {
+        id: 28,
+        name: "Lithuania",
+        language: "Lithuanian",
+        capital: "Vilnius",
+      },
+
 ];
 
-const rowsPerPage: number = 4;
 
 export const Master = () => {
     return (
@@ -100,7 +232,7 @@ export const Master = () => {
                 </div>
             </div>
             <div className="table-content">
-                <Table datas={datas} rowsPerPage={rowsPerPage} />
+                <Table datas={datas}/>
             </div>
         </React.Fragment>
     );
