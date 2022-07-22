@@ -208,12 +208,49 @@ thead {
 .tableCell {
     height: 75px;
 }
+.tableCell button {
+    font-size: 20px;
+}
 
 .tableHeader, .tableCell {
     padding-left: 45px;
 }
 .table-item-id, .table-mahsmt{
     color: #1183d6;
+}
+
+.dropdown-rmd {
+    position: absolute;
+
+    width: 80px;
+
+    background-color: white;
+
+    box-shadow: 0 0px 0px 0 rgb(0 0 0 / 20%), 0 4px 6px 0 rgb(0 0 0 / 19%);
+}
+.dropdown-rmd ul {
+    padding-left: 0px !important;
+    /* margin: 0px; */
+}   
+.dropdown-rmd ul a {
+    margin-top: 9px;
+    list-style-type: none;
+    text-align: center;
+
+    color: black;
+    text-decoration-line: none !important;
+}
+.dropdown-rmd ul a:hover {
+    background-color: #F4F4F4;
+}
+.dropdown-rmd ul li:hover {
+    background-color: #F4F4F4;
+}
+
+.dropdown-rmd ul li {
+    height: 30px;
+
+    margin: 0 !important;
 }
 
 

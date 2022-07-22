@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { DauThau } from '../components/DauThau';
 import { Master } from '../views/MasterInvite/Master';
 import '../assets/css/App.css'
+import { Detail } from '../views/DetailInvite/Detail';
 // import '../assets/css/index.css'
 
 
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path="dau-thau" element={<DauThau />} />
           <Route path="dau-thau/dau-thau-master" element={<Master />}/>
+          <Route path="dau-thau/dau-thau-detail" element={<Detail />}/>
         </Routes>
       </Router>
 

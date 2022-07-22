@@ -4,6 +4,7 @@ import { ActionMeta, InputActionMeta, SingleValue } from "react-select";
 import Select, { components, ControlProps } from 'react-select';
 
 import {data} from "./Master";
+import { Link } from "react-router-dom";
 // import {selOption, onChangeRowsPerPage} from "../../services/Table";
 
 const options = [
@@ -57,7 +58,53 @@ const useTable = (data: {}[], page: number, rowsPerPage: number) => {
     return {slice, range: tableRange};
 }
 
+const Dropdown = () => {
+    return (
+        <div className="dropdown-rmd">
+            <ul>
+                <Link to='/dau-thau/dau-thau-detail'>
+                    <li>Xem</li>
+                </Link>
+                <Link to='/dau-thau/dau-thau-detail'>
+                    <li>Sửa</li>
+                </Link>
+                <Link to='/dau-thau/dau-thau-detail'>
+                    <li>Xóa</li>
+                </Link>
+            </ul>
+        </div>
+    );
+}
 
+interface getId {
+    getId: any;
+};
+
+function Button(props: getId) {
+    const [visibleRmd, setVisibleRmd] = useState(false);
+
+    const {getId} = props;
+    console.log(getId);
+
+    const id: string = "button-rmd-" + getId as string;
+
+    useEffect(() => {
+    }, []);
+
+    const handleClick = (e: any) => {
+        // console.log(visibleRmd);
+        const newVisibleRmd = visibleRmd === true ? false : true;
+        setVisibleRmd(newVisibleRmd);
+        console.log(e.target.className);
+    };
+
+    return (
+        <>
+            <button onClick={handleClick} className={id}>...</button>
+            {visibleRmd && <Dropdown />}
+        </>
+    );
+}
 
 //Phan chia trang
 const TableFooter = ({ range, setPage, page, slice, setRowsPerPage, datas}: { range: number[]; setPage: any; page: number; slice: any[]; setRowsPerPage: any; datas: {}[]}) => {
@@ -99,23 +146,36 @@ const TableFooter = ({ range, setPage, page, slice, setRowsPerPage, datas}: { ra
         // console.log(option);
     }
 
+    let testPage = page;
+
     return (
         <div className="table-footer">
             <div className="total">{datas.length} Kết quả</div>
             <div className="button-page">
-                <button>&laquo;</button>
+                <button
+                    onClick={() => {
+                        if(testPage - 1 > 0) setPage(testPage - 1);
+                    }} 
+                >&laquo;</button>
                 {range.map((el, index) => (
                     <button
                     key={index}
                     className={` ${
                         page === el ? 'activeButton' : 'inactiveButton'
                     }`}
-                    onClick={() => setPage(el)}
+                    onClick={() => {
+                        testPage = el;
+                        setPage(el);
+                    }}
                     >
                     {el}
                     </button>
                 ))}
-                <button>&raquo;</button>
+                <button
+                    onClick={() => {
+                        if(testPage + 1 <= range.length) setPage(testPage + 1);
+                    }} 
+                >&raquo;</button>
                 <div className="select-element">
                     <Select
                         defaultValue={options[0]}
@@ -191,7 +251,9 @@ export const Table = (props: PropsWithChildren<TableProps>) => {
                         <td className="tableCell">st</td>
                         <td className="tableCell">st</td>
                         <td className="tableCell">tag</td>
-                        <td className="tableCell">...</td>
+                        <td className="tableCell">
+                            <Button getId={el.id}/>
+                        </td>
                         </tr>
                     ))}
                 </tbody>
