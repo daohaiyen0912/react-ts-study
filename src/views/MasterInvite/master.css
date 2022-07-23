@@ -82,6 +82,7 @@
     gap: 10px;
 
     margin: 17px 2% 10px 16.5%;
+    padding: 10px 0;
     border-radius: 5px;
     box-shadow: 0 2px 6px 0 rgb(0 0 0 / 20%), 0 0px 10px 0 rgb(0 0 0 / 19%);
 
@@ -93,11 +94,24 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+
+    border-bottom: 1px solid;
+    border-bottom-width: thin;
+    border-bottom-color: rgb(206, 207, 207);
+
+    text-align: left;
+
+    width: 250px;
 }
 .each-detail-filter label {
     margin: 0px;
 }
+.each-detail-filter input {
+    border: none !important;
 
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
 /* Table */
 .select-element {
     width: 200px;

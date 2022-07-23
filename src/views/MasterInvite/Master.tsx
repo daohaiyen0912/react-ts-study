@@ -208,27 +208,27 @@ export const Master = () => {
             <div className="detail-filter">
                 <div className="each-detail-filter">
                     <label htmlFor="ma-dau-thau">Mã đấu thầu</label>
-                    <input type="text" id="ma-dau-thau"></input>
+                    <input type="text" id="ma-dau-thau" placeholder="Nhập mã đấu thầu"></input>
                 </div>
                 <div className="each-detail-filter">
                     <label htmlFor="ma-hsmt">Mã HSMT</label>
-                    <input type="text" id="ma-hsmt"></input>
+                    <input type="text" id="ma-hsmt" placeholder="Nhập mã HSMT"></input>
                 </div>
                 <div className="each-detail-filter">
                     <label htmlFor="ten-goi-thau">Tên gói thầu</label>
-                    <input type="text" id="ten-goi-thau"></input>
+                    <input type="text" id="ten-goi-thau" placeholder="Nhập tên gói thầu"></input>
                 </div>
                 <div className="each-detail-filter">
                     <label htmlFor="tg-dong-thau">Thời gian đóng thầu</label>
-                    <input type="date" id="tg-dong-thau"></input>
+                    <input type="select" id="tg-dong-thau" placeholder="Từ ngày đến ngày"></input>
                 </div>
                 <div className="each-detail-filter">
                     <label htmlFor="trang-thai">Trạng thái</label>
-                    <input type="select" id="trang-thai"></input>
+                    <input type="select" id="trang-thai" placeholder="Tất cả"></input>
                 </div>
                 <div className="each-detail-filter">
                     <label htmlFor="pt-dau-thau">Phương thức đấu thầu</label>
-                    <input type="select" id="pt-dau-thau"></input>
+                    <input type="select" id="pt-dau-thau" placeholder="Phương thức đấu thầu 1GD"></input>
                 </div>
             </div>
             <div className="table-content">

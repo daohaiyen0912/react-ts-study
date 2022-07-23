@@ -6,11 +6,13 @@ import './sidebar.css';
 export const SideBar = () => {
     return (
         <div className="sideBar">
-            <h3 className="w3-bar-item">ePurchase</h3>
+            <div className="logo-sidebar">
+                <h3 className="w3-bar-item">ePurchase</h3>
+            </div>
             <ul className="side-bar-menu-list">
                 <li>
                     <Link to="/dau-thau">
-                        <div>
+                        <div className="sidebar-dau-thau">
                             <h3>Đấu thầu</h3>
                             <p>somthing describe</p>
                         </div>

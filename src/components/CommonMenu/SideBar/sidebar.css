@@ -24,3 +24,38 @@
 .side-bar-menu-list {
     padding: 0;
 }
+.logo-sidebar {
+    margin: auto 0;
+
+    padding: 8px !important;
+}
+.logo-sidebar h3 {
+    /* margin: auto 0; */
+
+    color: #1183d6;
+    font-size: 30px;
+}
+.sidebar-dau-thau {
+    text-align: left;
+
+    border-radius: 10px;
+    background-color: #e3e2e2;
+
+    margin: auto 6px;
+
+    padding-top: 5px;
+    padding-bottom: 3px;
+}
+.sidebar-dau-thau h3 {
+    color: #1183d6;
+    margin-top: 10px;
+    margin-bottom: 0px !important;
+
+    font-size: 20px
+}
+.sidebar-dau-thau h3, .sidebar-dau-thau p {
+    margin-left: 15px;
+}
+.sidebar-dau-thau p {
+   
+}
