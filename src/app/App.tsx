@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 
 // import reactLogo from '../assets/react.svg'
 import { DauThau } from '../components/DauThau';

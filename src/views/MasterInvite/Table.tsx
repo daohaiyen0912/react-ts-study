@@ -2,6 +2,7 @@ import React, { PropsWithChildren } from "react";
 import {useState, useEffect} from 'react';
 import { ActionMeta, InputActionMeta, SingleValue } from "react-select";
 import Select, { components, ControlProps } from 'react-select';
+import {Tag} from 'antd';
 
 import {data} from "./Master";
 import { Link } from "react-router-dom";
@@ -250,7 +251,9 @@ export const Table = (props: PropsWithChildren<TableProps>) => {
                         <td className="tableCell">{el.language}</td>
                         <td className="tableCell">st</td>
                         <td className="tableCell">st</td>
-                        <td className="tableCell">tag</td>
+                        <td className="tableCell">
+                            <Tag color="blue">Đóng thầu</Tag>
+                        </td>
                         <td className="tableCell">
                             <Button getId={el.id}/>
                         </td>
