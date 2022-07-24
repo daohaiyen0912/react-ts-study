@@ -1,6 +1,8 @@
 import React from 'react';
 import Select from 'react-select';
 import { Divider, Steps } from 'antd';
+import { CaretDownOutlined, DownOutlined } from '@ant-design/icons';
+
 
 import { Admin } from '../../components/CommonMenu/RightSideMenu/Admin';
 import { SideBar } from '../../components/CommonMenu/SideBar/SideBar';
@@ -84,14 +86,14 @@ export const Detail = () => {
                                         <div className="detail-ten-ben-mt">
                                             <label htmlFor="ten-ben-mt">
                                                 Tên
-                                                <span>*</span>
+                                                <span className="note-important">*</span>
                                             </label>
                                             <input id="ten-ben-mt" placeholder="Hiển thị theo thông tin HSMT"></input>
                                         </div>
                                         <div className="detail-dc-ben-mt">
                                             <label htmlFor="dia-chi-ben-mt">
                                                 Địa chỉ
-                                                <span>*</span>
+                                                <span className="note-important">*</span>
                                             </label>
                                             <input id="dia-chi-ben-mt" placeholder="Hiển thị theo thông tin HSMT"></input>
                                         </div>
@@ -115,14 +117,14 @@ export const Detail = () => {
                                         <div className="detail-ten-phu-trach">
                                             <label htmlFor="ten-phu-trach">
                                                 Tên người phụ trách
-                                                <span>*</span>
+                                                <span className="note-important">*</span>
                                             </label>
                                             <input id="ten-phu-trach" placeholder="Hiển thị theo thông tin HSMT"></input>
                                         </div>
                                         <div className="detail-dia-chi-pt"> 
                                             <label htmlFor="dia-chi-pt">
                                                 Địa chỉ
-                                                <span>*</span>
+                                                <span className="note-important">*</span>
                                             </label>
                                             <input id="dia-chi-pt" placeholder="Hiển thị theo thông tin HSMT"></input>
                                         </div>
@@ -143,21 +145,21 @@ export const Detail = () => {
                                             <div className="detail-time-phat-hanh">
                                                 <label htmlFor="time-phat-hanh">
                                                     Thời gian phát hành HSMT
-                                                    <span>*</span>
+                                                    <span className="note-important">*</span>
                                                 </label>
                                                 <input id="time-phat-hanh" placeholder="Hiển thị theo thông tin HSMT"></input>
                                             </div>
                                             <div className="detail-time-bd-nop-hs can-margin-left">
                                                 <label htmlFor="time-bd-nop-hs">
                                                     Thời gian bắt đầu nộp hồ sơ
-                                                    <span>*</span>
+                                                    <span className="note-important">*</span>
                                                 </label>
                                                 <input id="time-bd-nop-hs" placeholder="Hiển thị theo thông tin HSMT"></input>
                                             </div>
                                             <div className="detail-time-dong-thau can-margin-left">
                                                 <label htmlFor="time-dong-thau">
                                                     Thời điểm đóng thầu
-                                                    <span>*</span>
+                                                    <span className="note-important">*</span>
                                                 </label>
                                                 <input id="time-dong-thau" placeholder="Hiển thị theo thông tin HSMT"></input>
                                             </div>
@@ -166,48 +168,48 @@ export const Detail = () => {
                                             <div className="detail-time-mo-thau">
                                                 <label htmlFor="time-mo-thau">
                                                     Thời điểm mở thầu
-                                                    <span>*</span>
+                                                    <span className="note-important">*</span>
                                                 </label>
                                                 <input id="time-mo-thau" placeholder="Hiển thị theo thông tin HSMT"></input>
                                             </div>
                                             <div className="detail-time-bd-cham-thau can-margin-left">
                                                 <label htmlFor="time-bd-cham-thau">
                                                     Thời điểm bắt đầu chấm thầu
-                                                    <span>*</span>
+                                                    <span className="note-important">*</span>
                                                 </label>
                                                 <input id="time-bd-cham-thau" placeholder="Hiển thị theo thông tin HSMT"></input>
                                             </div>
                                             <div className="detail-time-kt-cham-thau can-margin-left">
                                                 <label htmlFor="time-kt-cham-thau">
                                                     Thời điểm kết thúc chấm thầu
-                                                    <span>*</span>
+                                                    <span className="note-important">*</span>
                                                 </label>
                                                 <input id="time-kt-cham-thau" placeholder="Hiển thị theo thông tin HSMT"></input>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div>
+                                <div className="thong-tin-khac">
                                     <h5>Thông tin khác</h5>
                                     <div className="detail-tt-khac">
                                         <div>
                                             <label htmlFor="ht-dau-thau">
                                                 Hình thức đấu thầu
-                                                <span>*</span>
+                                                <span className="note-important">*</span>
                                             </label>
                                             <input id="ht-dau-thau" placeholder="Hiển thị theo thông tin HSMT"></input>
                                         </div>
                                         <div className="can-margin-left">
                                             <label htmlFor="ht-nop">
                                                 Hình thức nộp
-                                                <span>*</span>
+                                                <span className="note-important">*</span>
                                             </label>
                                             <input id="ht-nop" placeholder="Hiển thị theo thông tin HSMT"></input>
                                         </div>
                                         <div className="can-margin-left">
                                             <label htmlFor="pt-lc">
                                                 Phương thức lựa chọn nhà thầu
-                                                <span>*</span>
+                                                <span className="note-important">*</span>
                                             </label>
                                             <input id="pt-lc" placeholder="Hiển thị theo thông tin HSMT"></input>
                                         </div>
@@ -222,6 +224,7 @@ export const Detail = () => {
                     <div className="history-1">
                         <button>
                             LỊCH SỬ
+                            <DownOutlined />
                         </button>
                     </div>
                     <div className="history-2">
@@ -236,24 +239,28 @@ export const Detail = () => {
                     <div className="opt-select-1">
                         <button>
                             THÔNG TIN CHI TIẾT
+                            <CaretDownOutlined />
                         </button>
                     </div>
                     <Divider />
                     <div className="opt-select-2">
                         <button>
                             TIÊU CHÍ ĐÁNH GIÁ
+                            <CaretDownOutlined />
                         </button>
                     </div>
                     <Divider />
                     <div className="opt-select-3">
                         <button>
                             HỒ SƠ DỰ THẦU
+                            <CaretDownOutlined />
                         </button>
                     </div>
                     <Divider />
                     <div className="opt-select-4">
                         <button>
                             LÀM RÕ HỒ SƠ MỜI THẦU
+                            <CaretDownOutlined />
                         </button>
                     </div>
                 </div>

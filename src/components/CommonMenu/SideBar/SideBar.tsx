@@ -1,3 +1,4 @@
+import { HddOutlined, ScheduleOutlined } from "@ant-design/icons";
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
 
@@ -20,14 +21,16 @@ export const SideBar = () => {
                 </li>
                 <li>
                     <Link to="/dau-thau/dau-thau-master">
-                        <div>
+                        <div className="sidebar-dau-thau-link">
+                            <ScheduleOutlined />
                             Đấu thầu
                         </div>
                     </Link>
                 </li>
                 <li>
                     <Link to="/dau-thau/dau-thau-info">
-                        <div>
+                        <div className="sidebar-thong-tin-link">
+                            <HddOutlined />
                             Thông tin cá nhân
                         </div>
                     </Link>

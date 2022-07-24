@@ -66,12 +66,6 @@ const Dropdown = () => {
                 <Link to='/dau-thau/dau-thau-detail'>
                     <li>Xem</li>
                 </Link>
-                <Link to='/dau-thau/dau-thau-detail'>
-                    <li>Sửa</li>
-                </Link>
-                <Link to='/dau-thau/dau-thau-detail'>
-                    <li>Xóa</li>
-                </Link>
             </ul>
         </div>
     );
@@ -245,18 +239,36 @@ export const Table = (props: PropsWithChildren<TableProps>) => {
                 <tbody>
                     {slice.map((el: any) => (
                         <tr className="tableRowItems" key={el.id}>
-                        <td className="tableCell table-item-id">{el.id}</td>
-                        <td className="tableCell">{el.name}</td>
-                        <td className="tableCell table-mahsmt">{el.capital}</td>
-                        <td className="tableCell">{el.language}</td>
-                        <td className="tableCell">st</td>
-                        <td className="tableCell">st</td>
-                        <td className="tableCell">
-                            <Tag color="blue">Đóng thầu</Tag>
-                        </td>
-                        <td className="tableCell">
-                            <Button getId={el.id}/>
-                        </td>
+                            <td className="tableCell table-item-id">
+                                {el.id}
+                                <p>Mã đấu thầu</p>
+                            </td>
+                            <td className="tableCell">
+                                {el.name}
+                                <p>admin@email.com</p>
+                            </td>
+                            <td className="tableCell table-mahsmt">
+                                {el.capital}
+                                <p>MS HSMT</p>
+                            </td>
+                            <td className="tableCell">
+                                {el.language}
+                                <p>Tên gói thầu</p>
+                            </td>
+                            <td className="tableCell">
+                                st
+                                <p>Phương thức đấu thầu</p>
+                            </td>
+                            <td className="tableCell">
+                                st
+                                <p>Thời gian đóng thầu</p>
+                            </td>
+                            <td className="tableCell">
+                                <Tag color="blue">Đóng thầu</Tag>
+                            </td>
+                            <td className="tableCell">
+                                <Button getId={el.id}/>
+                            </td>
                         </tr>
                     ))}
                 </tbody>

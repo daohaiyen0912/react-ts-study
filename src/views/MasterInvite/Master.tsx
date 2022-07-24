@@ -7,6 +7,7 @@ import {Table} from "./Table";
 import './master.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import Select from "react-select";
 
 export interface data {
     id: number;
@@ -186,6 +187,20 @@ const datas:data[] = [
 
 ];
 
+const optionTrangThai = [
+  {value: '1', label: "Tất cả"},
+  {value: '2', label: "Đóng thầu"},
+  {value: '3', label: "Đóng thầu GDA"},
+  {value: '4', label: "Hoàn thành GDA"},
+  {value: '5', label: "Mở thầu"},
+  {value: '6', label: "Nộp hồ sơ"}
+];
+const optionPTDauThau = [
+  {value: '1', label: "Tất cả"},
+  {value: '2', label: "Đấu thầu 1GDA"},
+  {value: '3', label: "Đầu thầu 2GDA"}
+];
+
 
 export const Master = () => {
     return (
@@ -224,11 +239,17 @@ export const Master = () => {
                 </div>
                 <div className="each-detail-filter">
                     <label htmlFor="trang-thai">Trạng thái</label>
-                    <input type="select" id="trang-thai" placeholder="Tất cả"></input>
+                    <Select 
+                      defaultValue={optionTrangThai[0]}
+                      options = {optionTrangThai}
+                    />
                 </div>
                 <div className="each-detail-filter">
                     <label htmlFor="pt-dau-thau">Phương thức đấu thầu</label>
-                    <input type="select" id="pt-dau-thau" placeholder="Phương thức đấu thầu 1GD"></input>
+                    <Select 
+                      defaultValue={optionPTDauThau[0]}
+                      options = {optionPTDauThau}
+                    />
                 </div>
             </div>
             <div className="table-content">

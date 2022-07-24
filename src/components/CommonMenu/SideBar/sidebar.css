@@ -39,7 +39,7 @@
     text-align: left;
 
     border-radius: 10px;
-    background-color: #e3e2e2;
+    background-color: #eae7e7;
 
     margin: auto 6px;
 
@@ -58,4 +58,33 @@
 }
 .sidebar-dau-thau p {
    
+}
+.sidebar-dau-thau-link {
+    text-align: left;
+
+    color: #1183d6;
+
+    font-size: 18px;
+
+    margin: 10px 6px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+
+    border-radius: 10px;
+    background-color: #eae7e7;
+}
+.sidebar-thong-tin-link {
+    text-align: left;
+    font-size: 18px;
+
+    margin: 10px 6px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+
+    border-radius: 10px;
+}
+.anticon-schedule, .anticon-hdd {
+    margin-right: 10px;
 }

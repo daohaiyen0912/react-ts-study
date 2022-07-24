@@ -79,10 +79,10 @@
     display: grid;
     justify-content: space-evenly;
     grid-template-columns: auto auto auto auto auto; /*Make the grid smaller than the container*/
-    gap: 10px;
+    gap: 17px;
 
     margin: 17px 2% 10px 16.5%;
-    padding: 10px 0;
+    padding: 20px 10px;
     border-radius: 5px;
     box-shadow: 0 2px 6px 0 rgb(0 0 0 / 20%), 0 0px 10px 0 rgb(0 0 0 / 19%);
 
@@ -100,8 +100,9 @@
     border-bottom-color: rgb(206, 207, 207);
 
     text-align: left;
+    margin-left: 10px;
 
-    width: 250px;
+    width: 210px;
 }
 .each-detail-filter label {
     margin: 0px;
@@ -171,7 +172,7 @@
 .table-content {
     background-color: white;
 
-    margin: 25px 36.766px 0px 300px;
+    margin: 25px 36.766px 0px 270px;
 }
 .table {
     /* margin-left: 300px; */
@@ -179,7 +180,7 @@
     width: 100%;
 
     border: 0px solid;
-    border-spacing: 0px !important;
+    border-spacing: 15px !important;
     outline: none !important;
 
     background-color: white;
@@ -226,7 +227,12 @@ thead {
 .tableCell button {
     font-size: 20px;
 }
-
+.tableRowItems {
+    height: 85px;
+}
+tbody {
+    margin-top: 5px;
+}
 .tableHeader, .tableCell {
     padding-left: 45px;
 }
@@ -244,9 +250,14 @@ thead {
     box-shadow: 0 0px 0px 0 rgb(0 0 0 / 20%), 0 4px 6px 0 rgb(0 0 0 / 19%);
 }
 .dropdown-rmd ul {
+    padding-top: 5px !important;
     padding-left: 0px !important;
     /* margin: 0px; */
+    margin: 0px !important;
 }   
+.dropdown-rmd ul:hover {
+    background-color: #F4F4F4;
+}
 .dropdown-rmd ul a {
     margin-top: 9px;
     list-style-type: none;
@@ -268,5 +279,22 @@ thead {
     margin: 0 !important;
 }
 
-
-
+div.each-detail-filter div.css-4xgw5l-IndicatorsContainer2 {
+    background-color: white;
+}
+div.each-detail-filter div.css-1s2u09g-control {
+    width: 100%;
+}
+div.each-detail-filter div.css-1s2u09g-control:hover {
+    width: 100% !important;
+}
+div.each-detail-filter .css-qc6sy-singleValue {
+    color: gray;
+}
+.tableCell p {
+    color: gray;
+    font-size: 12px;
+}
+div.button-page .css-1kwwvb1-ValueContainer2 {
+    background-color: #F4F4F4 !important;
+} 
