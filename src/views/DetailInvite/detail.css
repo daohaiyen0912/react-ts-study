@@ -325,3 +325,6 @@ h5+div div {
     color: red;
     margin-left: 30%;
 }
+.each-detail-filter input:focus {
+    outline: #0F62FE !important;
+}
