@@ -10,7 +10,9 @@ import './detail.css';
 import { handleInputChange } from 'react-select/dist/declarations/src/utils';
 import { Link } from 'react-router-dom';
 
-export const Detail = () => {
+export const Detail = (props: any) => {
+    const {getId} = props;
+    console.log(getId);
     const options = [
         {value: '1', label: "THÔNG TIN CHI TIẾT"},
         {value: '2', label: "TIÊU CHÍ ĐÁNH GIÁ"},
@@ -24,7 +26,7 @@ export const Detail = () => {
         {value: '1', label: "LỊCH SỬ"},
     ];
     const {Step} = Steps;
-    console.log(options);
+    // console.log(options);
 
     const handleSend = () => {
         
@@ -43,6 +45,7 @@ export const Detail = () => {
             </div>
             <div className="main-container">
                 <div className="detail-content">
+                    {/* Thông tin chi tiết */}
                     <div className="detail-content-1">
                         <div className="detail-content-1-1">
                             <Select

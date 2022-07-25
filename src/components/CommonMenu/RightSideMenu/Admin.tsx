@@ -18,7 +18,7 @@ export const Admin = (props: any) => {
                 <div className="avatar-admin">
                     <img src="https://i.pinimg.com/564x/77/ad/29/77ad29085f4ead8a3ae0ec92679574ce.jpg" style={{borderRadius: "50%"}}></img>
                     <div>
-                        <div className="bla">
+                        <div className="avatar-name">
                             <h2>Vu Tuan</h2>
                             <p>Admin</p>
                         </div>

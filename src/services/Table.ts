@@ -11,5 +11,5 @@ export const [selOption, setSelOption] = useState({
 
 export const onChangeRowsPerPage = (option: any) => {
     setSelOption(option);
-    console.log(option);
+    // console.log(option);
 }

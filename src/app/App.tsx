@@ -8,19 +8,23 @@ import { DauThau } from '../components/DauThau';
 import { Master } from '../views/MasterInvite/Master';
 import '../assets/css/App.css'
 import { Detail } from '../views/DetailInvite/Detail';
+import { Dropdown } from '../views/MasterInvite/Table';
+// import { getIDfor } from '../views/MasterInvite/Table';
 // import '../assets/css/index.css'
 
 
-function App() {
+function App(this: any) {
   const [count, setCount] = useState(0)
+  // console.log(count);
 
   return (
     <React.Fragment>
       <Router>
         <Routes>
           <Route path="dau-thau" element={<DauThau />} />
-          <Route path="dau-thau/dau-thau-master" element={<Master />}/>
-          <Route path="dau-thau/dau-thau-detail" element={<Detail />}/>
+          <Route path="dau-thau/dau-thau-master/" element={<Master update={setCount}/>}/>
+          <Route path="dau-thau/dau-thau-master/*" element={<Detail getId={count}/>}/>
+          {/* <Route path="dau-thau/dau-thau-detail" element={<Detail />}/> */}
         </Routes>
       </Router>
 

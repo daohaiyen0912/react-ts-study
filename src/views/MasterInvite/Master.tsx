@@ -202,7 +202,9 @@ const optionPTDauThau = [
 ];
 
 
-export const Master = () => {
+export const Master = (props: any) => {
+    console.log(props);
+    const {update} = props;
     return (
         <React.Fragment>
             <Admin />
@@ -253,7 +255,7 @@ export const Master = () => {
                 </div>
             </div>
             <div className="table-content">
-                <Table datas={datas}/>
+                <Table datas={datas} update={update}/>
             </div>
         </React.Fragment>
     );

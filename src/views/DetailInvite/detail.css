@@ -1,7 +1,7 @@
 .main-container {
     display: grid;
     justify-content: space-evenly;
-    grid-template-columns: 70% 30%; /*Make the grid smaller than the container*/
+    grid-template-columns: 70% 30%; 
     gap: 10px;
 
     margin-left: 265px;

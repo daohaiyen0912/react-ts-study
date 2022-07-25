@@ -5,7 +5,8 @@ import Select, { components, ControlProps } from 'react-select';
 import {Tag} from 'antd';
 
 import {data} from "./Master";
-import { Link } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
+import { Detail } from "../DetailInvite/Detail";
 // import {selOption, onChangeRowsPerPage} from "../../services/Table";
 
 const options = [
@@ -54,16 +55,24 @@ const useTable = (data: {}[], page: number, rowsPerPage: number) => {
         setSlice([...slice]);
     }, [data, setTableRange, page, setSlice, rowsPerPage]);
 
-    console.log(slice);
+    // console.log(slice);
 
     return {slice, range: tableRange};
 }
 
-const Dropdown = () => {
+export const Dropdown = (props: any) => {
+    const {getId} = props;
+    // const {update} = props.update;
+    // console.log(getId);
+
+    // update(getId);
+
+    const detailPath = "dau-thau-detail-" + getId as string;
+    const routePath = "dau-thau/dau-thau-master/dau-thau-detail" + getId as string;
     return (
         <div className="dropdown-rmd">
             <ul>
-                <Link to='/dau-thau/dau-thau-detail'>
+                <Link to={detailPath} >
                     <li>Xem</li>
                 </Link>
             </ul>
@@ -75,11 +84,12 @@ interface getId {
     getId: any;
 };
 
-function Button(props: getId) {
+function Button(props: any) {
     const [visibleRmd, setVisibleRmd] = useState(false);
 
     const {getId} = props;
-    console.log(getId);
+    // const { update } = props.update;
+    // console.log(getId);
 
     const id: string = "button-rmd-" + getId as string;
 
@@ -90,13 +100,13 @@ function Button(props: getId) {
         // console.log(visibleRmd);
         const newVisibleRmd = visibleRmd === true ? false : true;
         setVisibleRmd(newVisibleRmd);
-        console.log(e.target.className);
+        // console.log(e.target.className);
     };
 
     return (
         <>
             <button onClick={handleClick} className={id}>...</button>
-            {visibleRmd && <Dropdown />}
+            {visibleRmd && <Dropdown getId={getId} />}
         </>
     );
 }
@@ -210,8 +220,10 @@ export interface TableProps {
     // rowsPerPage: number;
 }
 
-export const Table = (props: PropsWithChildren<TableProps>) => {
+export const Table = (props: any) => {
     const { datas } = props;
+
+    // update(1);
     // const {rowsPerPage} = props;
     // console.log(datas);
 
