@@ -67,8 +67,8 @@ export const Dropdown = (props: any) => {
 
     // update(getId);
 
-    const detailPath = "dau-thau-detail-" + getId as string;
-    const routePath = "dau-thau/dau-thau-master/dau-thau-detail" + getId as string;
+    const detailPath = "dau-thau-detail?id=" + getId as string;
+    // const routePath = "dau-thau/dau-thau-master/dau-thau-detail" + getId as string;
     return (
         <div className="dropdown-rmd">
             <ul>
