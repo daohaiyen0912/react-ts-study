@@ -35,7 +35,10 @@ export const Detail = (props: any) => {
     const stChange = () => {
 
     }
-
+   
+    const getUrlId = window.location.href as string;
+    const idMDT = getUrlId.slice(getUrlId.length - 1,getUrlId.length);
+    // console.log(getUrlId.slice(getUrlId.length - 1,getUrlId.length));
     return (
         <>
             <Admin />
@@ -62,7 +65,7 @@ export const Detail = (props: any) => {
                         <div className="detail-content-1-2">
                             <div>
                                 <label htmlFor="DT_001">Mã đấu thầu</label>
-                                <input value="DT_001" id="DT_001" onChange={stChange}></input>
+                                <input value={idMDT} id="DT_001" onChange={stChange}></input>
                             </div>
                             <div>
                                 <label htmlFor="HSMT_001">Mã HSMT</label>
