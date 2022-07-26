@@ -94,7 +94,13 @@ function Button(props: any) {
     const id: string = "button-rmd-" + getId as string;
 
     useEffect(() => {
+        
     }, []);
+
+    window.onclick = (event) => {
+        const target: HTMLElement = event.target as HTMLElement;
+        if(target.className !== id && visibleRmd) setVisibleRmd(false);
+    }
 
     const handleClick = (e: any) => {
         // console.log(visibleRmd);
