@@ -35,7 +35,6 @@ const calculateRange =
 
 //Phân chia dữ liệu
 const sliceData = (data: {}[], page: number, rowsPerPage: number) => {
-    // console.log(data.slice((page-1) * rowsPerPage, page * rowsPerPage));
     return data.slice((page-1) * rowsPerPage, page * rowsPerPage);
 }
 
@@ -97,11 +96,13 @@ function Button(props: any) {
         
     }, []);
 
+    // Xử lý click out button Tác vụ - do không phải xảy ra khi có dữ liệu thay đổi nên sẽ để ngoài
     window.onclick = (event) => {
         const target: HTMLElement = event.target as HTMLElement;
         if(target.className !== id && visibleRmd) setVisibleRmd(false);
     }
 
+    // Xử lý có hiện drop tác vụ Xem hay không
     const handleClick = (e: any) => {
         // console.log(visibleRmd);
         const newVisibleRmd = visibleRmd === true ? false : true;
@@ -124,6 +125,8 @@ const TableFooter = ({ range, setPage, page, slice, setRowsPerPage, datas}: { ra
         label: "4"
     });
 
+    // Việc phân chia trang có liên quan tới việc thay đổi dữ liệu về số phần tử được hiển thị nên cần rerender
+    // mỗi lần thay đổi dữ liệu vì vậy cần để trong useEffect
     useEffect(() => {
         if(slice.length < 1 && page !== 1) {
             setPage(page-1);
@@ -202,20 +205,6 @@ const TableFooter = ({ range, setPage, page, slice, setRowsPerPage, datas}: { ra
                     <span>Kết quả</span>
                 </div>
             </div>
-            {/* <div className="select-element">
-                <Select
-                defaultValue={options[0]}
-                // components={{ Control: ControlComponent }}
-                isSearchable
-                name="rowsPerPage"
-                options={options}
-                // getOptionLabel={(option) => option.label}
-                // getOptionValue={(option) => option.value}
-                value={selOption}
-                onChange={(option) => onChangeRowsPerPage(option)} // this returns (option) => option.phaseText) as a string
-                />
-                <span>Kết quả</span>
-            </div> */}
         </div>
       );
 };

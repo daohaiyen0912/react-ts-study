@@ -12,7 +12,7 @@ export const SideBar = () => {
             </div>
             <ul className="side-bar-menu-list">
                 <li>
-                    <Link to="/dau-thau">
+                    <Link to="/">
                         <div className="sidebar-dau-thau">
                             <h3>Đấu thầu</h3>
                             <p>somthing describe</p>
@@ -20,7 +20,7 @@ export const SideBar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/dau-thau/dau-thau-master">
+                    <Link to="/dau-thau-master">
                         <div className="sidebar-dau-thau-link">
                             <ScheduleOutlined />
                             Đấu thầu
@@ -28,7 +28,7 @@ export const SideBar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/dau-thau/dau-thau-info">
+                    <Link to="/dau-thau-info">
                         <div className="sidebar-thong-tin-link">
                             <HddOutlined />
                             Thông tin cá nhân

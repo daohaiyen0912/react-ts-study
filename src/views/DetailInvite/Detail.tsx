@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 
 export const Detail = (props: any) => {
     const {getId} = props;
-    console.log(getId);
+    
     const options = [
         {value: '1', label: "THÔNG TIN CHI TIẾT"},
         {value: '2', label: "TIÊU CHÍ ĐÁNH GIÁ"},
@@ -27,18 +27,23 @@ export const Detail = (props: any) => {
     ];
     const {Step} = Steps;
     // console.log(options);
-
-    const handleSend = () => {
-        
-    }
-
-    const stChange = () => {
-
-    }
    
     const getUrlId = window.location.href as string;
     const idMDT = getUrlId.slice(getUrlId.length - 1,getUrlId.length);
     // console.log(getUrlId.slice(getUrlId.length - 1,getUrlId.length));
+
+    function handleInputChange(props: any) {
+        console.log(props.target.value);
+    }
+      
+    function handleInputChangeSelect(props: any) {
+        console.log(props.label);
+    }
+    
+    function handleOnclickButtonTitle() {
+        console.log(props);
+    }
+
     return (
         <>
             <Admin />
@@ -56,25 +61,22 @@ export const Detail = (props: any) => {
                                 // components={{ Control: ControlComponent }}
                                 name="select-options"
                                 options={options}
-                                // getOptionLabel={(option) => option.label}
-                                // getOptionValue={(option) => option.value}
-                                // value={selOption}
-                                // onChange={(option) => onChangeRowsPerPage(option)} // this returns (option) => option.phaseText) as a string
+                                onChange={handleInputChangeSelect}
                             />
                         </div>
                         <div className="detail-content-1-2">
                             <div>
                                 <label htmlFor="DT_001">Mã đấu thầu</label>
-                                <input value={idMDT} id="DT_001" onChange={stChange}></input>
+                                <input value={idMDT} id="DT_001" onChange={handleInputChange}></input>
                             </div>
                             <div>
                                 <label htmlFor="HSMT_001">Mã HSMT</label>
-                                <input value="HSMT_001" id="HSMT_001" onChange={stChange}></input>
+                                <input value="HSMT_001" id="HSMT_001" onChange={handleInputChange}></input>
                             </div>
                         </div>
                         <div className="detail-content-1-3">
                             <label htmlFor="mua-sam-an-uong">Tên gói thầu</label>
-                            <input value="Gói thầu mua sắm laptop" type="select" id="mua-sam-an-uong" onChange={stChange}></input>
+                            <input value="Gói thầu mua sắm laptop" type="select" id="mua-sam-an-uong" onChange={handleInputChange}></input>
                         </div>
                         <div className="detail-content-1-4">
                             <div className="detail-content-1-4-1">
@@ -83,10 +85,7 @@ export const Detail = (props: any) => {
                                         // components={{ Control: ControlComponent }}
                                         name="select-options"
                                         options={optionsOther}
-                                        // getOptionLabel={(option) => option.label}
-                                        // getOptionValue={(option) => option.value}
-                                        // value={selOption}
-                                        // onChange={(option) => onChangeRowsPerPage(option)} // this returns (option) => option.phaseText) as a string
+                                        onChange={handleInputChangeSelect}
                                     />
                             </div>
                             <div className="detail-content-1-4-2">
@@ -98,26 +97,26 @@ export const Detail = (props: any) => {
                                                 Tên
                                                 <span className="note-important">*</span>
                                             </label>
-                                            <input id="ten-ben-mt" placeholder="Hiển thị theo thông tin HSMT" onChange={stChange}></input>
+                                            <input id="ten-ben-mt" placeholder="Hiển thị theo thông tin HSMT" onChange={handleInputChange}></input>
                                         </div>
                                         <div className="detail-dc-ben-mt">
                                             <label htmlFor="dia-chi-ben-mt">
                                                 Địa chỉ
                                                 <span className="note-important">*</span>
                                             </label>
-                                            <input id="dia-chi-ben-mt" placeholder="Hiển thị theo thông tin HSMT" onChange={stChange}></input>
+                                            <input id="dia-chi-ben-mt" placeholder="Hiển thị theo thông tin HSMT" onChange={handleInputChange}></input>
                                         </div>
                                         <div className="dien-thoai-ben-mt">
                                             <label htmlFor="dien-thoai-ben-mt">Điện thoại</label>
-                                            <input id="dien-thoai-ben-mt" placeholder="Hiển thị theo thông tin HSMT" onChange={stChange}></input>
+                                            <input id="dien-thoai-ben-mt" placeholder="Hiển thị theo thông tin HSMT" onChange={handleInputChange}></input>
                                         </div>
                                         <div className="fax-ben-mt">
                                             <label htmlFor="fax-ben-mt">Fax</label>
-                                            <input id="fax-ben-mt" placeholder="Hiển thị theo thông tin HSMT" onChange={stChange}></input>
+                                            <input id="fax-ben-mt" placeholder="Hiển thị theo thông tin HSMT" onChange={handleInputChange}></input>
                                         </div>
                                         <div className="detail-ms-thue-ben-mt">
                                             <label htmlFor="ms-thue-ben-mt">Mã số thuế</label>
-                                            <input id="ms-thue-ben-mt" placeholder="Hiển thị theo thông tin HSMT" onChange={stChange}></input>
+                                            <input id="ms-thue-ben-mt" placeholder="Hiển thị theo thông tin HSMT" onChange={handleInputChange}></input>
                                         </div>
                                     </div>
                                 </div>
@@ -129,22 +128,22 @@ export const Detail = (props: any) => {
                                                 Tên người phụ trách
                                                 <span className="note-important">*</span>
                                             </label>
-                                            <input id="ten-phu-trach" placeholder="Hiển thị theo thông tin HSMT" onChange={stChange}></input>
+                                            <input id="ten-phu-trach" placeholder="Hiển thị theo thông tin HSMT" onChange={handleInputChange}></input>
                                         </div>
                                         <div className="detail-dia-chi-pt"> 
                                             <label htmlFor="dia-chi-pt">
                                                 Địa chỉ
                                                 <span className="note-important">*</span>
                                             </label>
-                                            <input id="dia-chi-pt" placeholder="Hiển thị theo thông tin HSMT" onChange={stChange}></input>
+                                            <input id="dia-chi-pt" placeholder="Hiển thị theo thông tin HSMT" onChange={handleInputChange}></input>
                                         </div>
                                         <div className="detail-dt-pt">
                                             <label htmlFor="dt-pt">Điện thoại</label>
-                                            <input id="dt-pt" placeholder="Hiển thị theo thông tin HSMT" onChange={stChange}></input>
+                                            <input id="dt-pt" placeholder="Hiển thị theo thông tin HSMT" onChange={handleInputChange}></input>
                                         </div>
                                         <div className="detail-fax-pt">
                                             <label htmlFor="fax-pt">Fax</label>
-                                            <input id="fax-pt" placeholder="Hiển thị theo thông tin HSMT" onChange={stChange}></input>
+                                            <input id="fax-pt" placeholder="Hiển thị theo thông tin HSMT" onChange={handleInputChange}></input>
                                         </div>
                                     </div>
                                 </div>
@@ -157,21 +156,21 @@ export const Detail = (props: any) => {
                                                     Thời gian phát hành HSMT
                                                     <span className="note-important">*</span>
                                                 </label>
-                                                <input id="time-phat-hanh" placeholder="Hiển thị theo thông tin HSMT" onChange={stChange}></input>
+                                                <input id="time-phat-hanh" placeholder="Hiển thị theo thông tin HSMT" onChange={handleInputChange}></input>
                                             </div>
                                             <div className="detail-time-bd-nop-hs can-margin-left">
                                                 <label htmlFor="time-bd-nop-hs">
                                                     Thời gian bắt đầu nộp hồ sơ
                                                     <span className="note-important">*</span>
                                                 </label>
-                                                <input id="time-bd-nop-hs" placeholder="Hiển thị theo thông tin HSMT" onChange={stChange}></input>
+                                                <input id="time-bd-nop-hs" placeholder="Hiển thị theo thông tin HSMT" onChange={handleInputChange}></input>
                                             </div>
                                             <div className="detail-time-dong-thau can-margin-left">
                                                 <label htmlFor="time-dong-thau">
                                                     Thời điểm đóng thầu
                                                     <span className="note-important">*</span>
                                                 </label>
-                                                <input id="time-dong-thau" placeholder="Hiển thị theo thông tin HSMT" onChange={stChange}></input>
+                                                <input id="time-dong-thau" placeholder="Hiển thị theo thông tin HSMT" onChange={handleInputChange}></input>
                                             </div>
                                         </div>
                                         <div className="detail-tt-moi-thau-2">
@@ -180,21 +179,21 @@ export const Detail = (props: any) => {
                                                     Thời điểm mở thầu
                                                     <span className="note-important">*</span>
                                                 </label>
-                                                <input id="time-mo-thau" placeholder="Hiển thị theo thông tin HSMT" onChange={stChange}></input>
+                                                <input id="time-mo-thau" placeholder="Hiển thị theo thông tin HSMT" onChange={handleInputChange}></input>
                                             </div>
                                             <div className="detail-time-bd-cham-thau can-margin-left">
                                                 <label htmlFor="time-bd-cham-thau">
                                                     Thời điểm bắt đầu chấm thầu
                                                     <span className="note-important">*</span>
                                                 </label>
-                                                <input id="time-bd-cham-thau" placeholder="Hiển thị theo thông tin HSMT" onChange={stChange}></input>
+                                                <input id="time-bd-cham-thau" placeholder="Hiển thị theo thông tin HSMT" onChange={handleInputChange}></input>
                                             </div>
                                             <div className="detail-time-kt-cham-thau can-margin-left">
                                                 <label htmlFor="time-kt-cham-thau">
                                                     Thời điểm kết thúc chấm thầu
                                                     <span className="note-important">*</span>
                                                 </label>
-                                                <input id="time-kt-cham-thau" placeholder="Hiển thị theo thông tin HSMT" onChange={stChange}></input>
+                                                <input id="time-kt-cham-thau" placeholder="Hiển thị theo thông tin HSMT" onChange={handleInputChange}></input>
                                             </div>
                                         </div>
                                     </div>
@@ -207,21 +206,21 @@ export const Detail = (props: any) => {
                                                 Hình thức đấu thầu
                                                 <span className="note-important">*</span>
                                             </label>
-                                            <input id="ht-dau-thau" placeholder="Hiển thị theo thông tin HSMT" onChange={stChange}></input>
+                                            <input id="ht-dau-thau" placeholder="Hiển thị theo thông tin HSMT" onChange={handleInputChange}></input>
                                         </div>
                                         <div className="can-margin-left">
                                             <label htmlFor="ht-nop">
                                                 Hình thức nộp
                                                 <span className="note-important">*</span>
                                             </label>
-                                            <input id="ht-nop" placeholder="Hiển thị theo thông tin HSMT" onChange={stChange}></input>
+                                            <input id="ht-nop" placeholder="Hiển thị theo thông tin HSMT" onChange={handleInputChange}></input>
                                         </div>
                                         <div className="can-margin-left">
                                             <label htmlFor="pt-lc">
                                                 Phương thức lựa chọn nhà thầu
                                                 <span className="note-important">*</span>
                                             </label>
-                                            <input id="pt-lc" placeholder="Hiển thị theo thông tin HSMT" onChange={stChange}></input>
+                                            <input id="pt-lc" placeholder="Hiển thị theo thông tin HSMT" onChange={handleInputChange}></input>
                                         </div>
                                     </div>
                                 </div>
@@ -232,7 +231,7 @@ export const Detail = (props: any) => {
                 </div>
                 <div className="history">
                     <div className="history-1">
-                        <button>
+                        <button onClick={handleOnclickButtonTitle}>
                             LỊCH SỬ
                             <DownOutlined />
                         </button>
@@ -247,28 +246,28 @@ export const Detail = (props: any) => {
                 </div>
                 <div className="select-content">
                     <div className="opt-select-1">
-                        <button>
+                        <button onClick={handleOnclickButtonTitle}>
                             THÔNG TIN CHI TIẾT
                             <CaretDownOutlined />
                         </button>
                     </div>
                     <Divider />
                     <div className="opt-select-2">
-                        <button>
+                        <button onClick={handleOnclickButtonTitle}>
                             TIÊU CHÍ ĐÁNH GIÁ
                             <CaretDownOutlined />
                         </button>
                     </div>
                     <Divider />
                     <div className="opt-select-3">
-                        <button>
+                        <button onClick={handleOnclickButtonTitle}>
                             HỒ SƠ DỰ THẦU
                             <CaretDownOutlined />
                         </button>
                     </div>
                     <Divider />
                     <div className="opt-select-4">
-                        <button>
+                        <button onClick={handleOnclickButtonTitle}>
                             LÀM RÕ HỒ SƠ MỜI THẦU
                             <CaretDownOutlined />
                         </button>
@@ -286,14 +285,14 @@ export const Detail = (props: any) => {
                     </Steps>
                 </div>
                 <div className="button-remote">
-                    <button className="btn-1">Làm rõ HSMT</button>
-                    <button className="btn-2">
-                        <Link to="/dau-thau/dau-thau-master">
+                    <button className="btn-1" onClick={handleOnclickButtonTitle}>Làm rõ HSMT</button>
+                    <button className="btn-2" onClick={handleOnclickButtonTitle}>
+                        <Link to="/dau-thau-master">
                             Gửi hồ sơ
                         </Link>
                     </button>
-                    <button className="btn-3">
-                        <Link to="/dau-thau/dau-thau-master">
+                    <button className="btn-3" onClick={handleOnclickButtonTitle}>
+                        <Link to="/dau-thau-master">
                             Đóng
                         </Link>
                     </button>

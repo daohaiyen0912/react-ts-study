@@ -14,16 +14,13 @@ import { Dropdown } from '../views/MasterInvite/Table';
 
 
 function App(this: any) {
-  const [count, setCount] = useState(0)
-  // console.log(count);
-
   return (
     <React.Fragment>
       <Router>
         <Routes>
-          <Route path="dau-thau" element={<DauThau />} />
-          <Route path="dau-thau/dau-thau-master/" element={<Master update={setCount}/>}/>
-          <Route path="dau-thau/dau-thau-master/*" element={<Detail getId={count}/>}/>
+          <Route path="/" element={<DauThau />} />
+          <Route path="dau-thau-master/" element={<Master />}/>
+          <Route path="dau-thau-master/*" element={<Detail />}/>
           {/* <Route path="dau-thau/dau-thau-detail" element={<Detail />}/> */}
         </Routes>
       </Router>
