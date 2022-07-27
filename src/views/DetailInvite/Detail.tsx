@@ -33,15 +33,15 @@ export const Detail = (props: any) => {
     // console.log(getUrlId.slice(getUrlId.length - 1,getUrlId.length));
 
     function handleInputChange(props: any) {
-        console.log(props.target.value);
+        // console.log(props.target.value);
     }
       
     function handleInputChangeSelect(props: any) {
-        console.log(props.label);
+        // console.log(props.label);
     }
     
     function handleOnclickButtonTitle() {
-        console.log(props);
+        // console.log(props);
     }
 
     return (
