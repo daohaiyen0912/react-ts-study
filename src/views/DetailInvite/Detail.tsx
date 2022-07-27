@@ -29,7 +29,8 @@ export const Detail = (props: any) => {
     // console.log(options);
    
     const getUrlId = window.location.href as string;
-    const idMDT = getUrlId.slice(getUrlId.length - 1,getUrlId.length);
+    // const idMDT = getUrlId.slice(getUrlId.length - 1,getUrlId.length);
+    const idMDT = getUrlId.split("=",2 )[1];
     // console.log(getUrlId.slice(getUrlId.length - 1,getUrlId.length));
 
     function handleInputChange(props: any) {

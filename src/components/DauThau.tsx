@@ -9,7 +9,7 @@ export const DauThau = () => {
       <React.Fragment>
         <Admin />
         <SideBar />
-        <h1>Haloooo</h1>
+        <h1>Click vào phần đấu thầu bên dưới để vào trang master</h1>
       </React.Fragment>  
     );
 };
